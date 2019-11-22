@@ -48,7 +48,7 @@ bool gdimm_renderer::fetch_glyph_run(bool is_glyph_index, bool is_pdy, LPCWSTR l
 	}
 
 #ifdef _M_X64
-	const uint64_t str_hash = MurmurHash64A(lpString, c * sizeof(WCHAR), is_glyph_index);
+	const uint64_t str_hash = MurmurHash64A(lpString, c * sizeof(WCHAR), is_glyph_index ? 0xdeadbeef : 0xbaadf00d);
 #else
 	const uint64_t str_hash = MurmurHash64B(lpString, c * sizeof(WCHAR), is_glyph_index);
 #endif // _M_X64
