@@ -69,7 +69,7 @@ const wchar_t *gdipp_get_demo_setting(const wchar_t *setting_name)
 	return setting_instance.get_demo_setting(setting_name);
 }
 
-const vector<const wstring> &gdipp_get_demo_fonts()
+const vector<wstring> &gdipp_get_demo_fonts()
 {
 	return setting_instance.get_demo_fonts();
 }

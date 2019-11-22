@@ -1,0 +1,10 @@
+*.vcxproj.filters
+*.vcxproj.user
+Debug
+Release
+/freetype/
+/pugixml/
+/WTL/
+/EasyHook/
+/UpgradeLog.htm
+/.vs

@@ -12,7 +12,7 @@ CAppModule _Module;
 int total_count = 5000;
 int thread_count = 2;
 bool random_text = false;
-vector<const wstring> paint_fonts;
+vector<wstring> paint_fonts;
 
 HMODULE h_gdimm = NULL;
 WCHAR gdimm_path[MAX_PATH];

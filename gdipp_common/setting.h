@@ -2,13 +2,12 @@
 
 #include "gdipp_common.h"
 using namespace std;
-using namespace std::tr1;
 using namespace pugi;
 
 class gdipp_setting
 {
 	// setting names are case-insensitive
-	typedef map<const wstring, wstring, wstring_ci_less> setting_map;
+	typedef map<wstring, wstring, wstring_ci_less> setting_map;
 
 	struct gdimm_font_node
 	{
@@ -24,8 +23,8 @@ class gdipp_setting
 	setting_map _process_setting;
 	list<gdimm_font_node> _gdimm_font;
 	setting_map _demo_setting;
-	vector<const wstring> _demo_fonts;
-	list<const wstring> _exclude_process;
+	vector<wstring> _demo_fonts;
+	list<wstring> _exclude_process;
 
 	wchar_t _process_name[MAX_PATH];
 
@@ -41,7 +40,7 @@ public:
 
 	const wchar_t *get_gdimm_setting(const wchar_t *setting_name, const gdimm_setting_trait *setting_trait) const;
 	const wchar_t *get_demo_setting(const wchar_t *setting_name) const;
-	const vector<const wstring> &get_demo_fonts() const;
+	const vector<wstring> &get_demo_fonts() const;
 	bool is_process_excluded(const wchar_t *proc_name) const;
 
 	void init_setting();

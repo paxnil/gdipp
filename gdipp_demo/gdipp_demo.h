@@ -6,7 +6,7 @@ using namespace std;
 extern int total_count;
 extern int thread_count;
 extern bool random_text;
-extern vector<const wstring> paint_fonts;
+extern vector<wstring> paint_fonts;
 
 // gdimm related
 extern HMODULE h_gdimm;

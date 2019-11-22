@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "setting.h"
 
-const std::tr1::regex_constants::syntax_option_type regex_flags = std::tr1::regex_constants::icase | std::tr1::regex_constants::nosubs | std::tr1::regex_constants::optimize;
+const std::regex_constants::syntax_option_type regex_flags = std::regex_constants::icase | std::regex_constants::nosubs | std::regex_constants::optimize;
 
 gdipp_setting::gdipp_setting()
 	: _xml_doc(NULL)
@@ -155,7 +155,7 @@ const wchar_t *gdipp_setting::get_demo_setting(const wchar_t *setting_name) cons
 		return iter->second.c_str();
 }
 
-const vector<const wstring> &gdipp_setting::get_demo_fonts() const
+const vector<wstring> &gdipp_setting::get_demo_fonts() const
 {
 	return _demo_fonts;
 }
@@ -171,7 +171,7 @@ bool gdipp_setting::is_process_excluded(const wchar_t *proc_name) const
 	else
 		final_name = proc_name;
 
-	for (list<const wstring>::const_iterator iter = _exclude_process.begin(); iter != _exclude_process.end(); iter++)
+	for (list<wstring>::const_iterator iter = _exclude_process.begin(); iter != _exclude_process.end(); iter++)
 	{
 		const wregex name_ex(iter->data(), regex_flags);
 		if (regex_match(final_name, name_ex))
